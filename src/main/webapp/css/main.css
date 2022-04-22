@@ -1,0 +1,22 @@
+table {
+	border-collapse: collapse;
+	font-family: Arial, Helvetica, sans-serif;
+}
+th, td {
+	padding:10px;
+	border: 1px solid rgb(224,224,224);
+}
+th {
+	text-align: left;
+	background-color:rgb(76,175,80);
+	color:white;
+}
+#oikealle {
+	text-align: right;
+}
+tr:nth-child(even) {
+	background:rgb(242,242,242)
+}
+tr:nth-child(odd) {
+	background:white;
+}
