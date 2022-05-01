@@ -11,12 +11,19 @@ th {
 	background-color:rgb(76,175,80);
 	color:white;
 }
-#oikealle {
+.oikealle {
 	text-align: right;
 }
 tr:nth-child(even) {
 	background:rgb(242,242,242)
 }
-tr:nth-child(odd) {
-	background:white;
+
+.poista {
+	color: red;
+	text-decoration: underline;
+	cursor: pointer;
+}
+#uusiAsiakas, #takaisin {
+	color: white;
+	cursor: pointer;
 }
