@@ -43,7 +43,7 @@ class JUnit_testaa_autot {
 		muutettava.setSukunimi("Alanko");
 		muutettava.setPuhelin("050-123234");
 		muutettava.setSposti("anja.alanko@sposti.fi");
-		dao.muutaAsiakas(muutettava, 18);	
+		dao.muutaAsiakas(muutettava);	
 		assertEquals("Anja", dao.etsiAsiakas(18).getEtunimi());
 		assertEquals("Alanko", dao.etsiAsiakas(18).getSukunimi());
 		assertEquals("050-123234", dao.etsiAsiakas(18).getPuhelin());

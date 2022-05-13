@@ -48,11 +48,11 @@ $(document).ready(function(){
 	//GET /autot/haeyksi/asiakas_id
 	var asiakas_id = requestURLParam("asiakas_id"); //Funktio löytyy scripts/main.js 	
 	$.ajax({url:"asiakkaat/haeyksi/"+asiakas_id, type:"GET", dataType:"json", success:function(result){	
-		$("#asiakas_id").val(result.asiakas_id);
 		$("#etunimi").val(result.etunimi);	
 		$("#sukunimi").val(result.sukunimi);
 		$("#puhelin").val(result.puhelin);
-		$("#sposti").val(result.sposti);			
+		$("#sposti").val(result.sposti);
+		$("#asiakas_id").val(result.asiakas_id);
     }});
 	
 	$("#tiedot").validate({						
@@ -112,7 +112,6 @@ function paivitaTiedot(){
       	$("#ilmo").html("Asiakkaan päivittäminen epäonnistui.");
       }else if(result.response==1){			
       	$("#ilmo").html("Asiakkaan päivittäminen onnistui.");
-      	$("#etunimi", "#sukunimi", "#puhelin", "#sposti").val("");
 	  }
   }});	
 }

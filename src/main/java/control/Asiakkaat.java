@@ -78,8 +78,8 @@ public class Asiakkaat extends HttpServlet {
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Asiakkaat.doPut()");
 		JSONObject jsonObj = new JsonStrToObj().convert(request); //Muutetaan kutsun mukana tuleva json-string json-objektiksi			
-		int asiakas_id = Integer.parseInt(jsonObj.getString("asiakas_id")); //String muutetaan int
 		Asiakas asiakas = new Asiakas();
+		asiakas.setAsiakas_id(Integer.parseInt(jsonObj.getString("asiakas_id")));
 		asiakas.setEtunimi(jsonObj.getString("etunimi"));
 		asiakas.setSukunimi(jsonObj.getString("sukunimi"));
 		asiakas.setPuhelin(jsonObj.getString("puhelin"));
@@ -87,7 +87,7 @@ public class Asiakkaat extends HttpServlet {
 		response.setContentType("application/json");
 		PrintWriter out = response.getWriter();
 		Dao dao = new Dao();			
-		if(dao.muutaAsiakas(asiakas, asiakas_id)){ //metodi palauttaa true/false
+		if(dao.muutaAsiakas(asiakas)){ //metodi palauttaa true/false
 			out.println("{\"response\":1}");  //Asiakkaan muuttaminen onnistui {"response":1}
 		}else{
 			out.println("{\"response\":0}");  //Asiakkaan muuttaminen epäonnistui {"response":0}
